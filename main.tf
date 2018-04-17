@@ -28,7 +28,6 @@ resource "kubernetes_service" "app-service" {
 }
 
 data "template_file" "app-deployment" {
-  count = "${var.module_count}"
   template = "${file("${path.module}/manifests/app-deployment.yaml")}"
 
   vars {
