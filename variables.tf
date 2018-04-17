@@ -6,3 +6,7 @@ variable "cloudflare_domain" {
 variable "module_count" {
   type = "string"
 }
+
+variable "app_version" {
+  type = "string"
+}

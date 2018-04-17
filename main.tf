@@ -32,6 +32,7 @@ data "template_file" "app-deployment" {
 
   vars {
     namespace = "${terraform.workspace}"
+    app_version = "${var.app_version}" 
   }
 }
 

@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: snap
-        image: benjvi/snap-hello-world:t0
+        image: benjvi/snap-hello-world:${app_version}
         ports:
         - containerPort: 8000
