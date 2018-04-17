@@ -19,4 +19,4 @@ spec:
       - name: terraform-cd-example-app
         image: benjvi/terraform-cd-example-app:${app_version}
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
