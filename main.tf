@@ -1,4 +1,5 @@
 resource "cloudflare_record" "webapp" {
+  count = "${var.module_count}"
   domain = "${var.cloudflare_domain}"
   name   = "webapp.${terraform.workspace}"
   value  = "${kubernetes_service.app-service.load_balancer_ingress.0.ip}"
@@ -7,6 +8,7 @@ resource "cloudflare_record" "webapp" {
 }
 
 resource "kubernetes_service" "app-service" {
+  count = "${var.module_count}"
   metadata {
     name = "app-service"
     namespace = "${terraform.workspace}"
@@ -26,6 +28,7 @@ resource "kubernetes_service" "app-service" {
 }
 
 data "template_file" "app-deployment" {
+  count = "${var.module_count}"
   template = "${file("${path.module}/manifests/app-deployment.yaml")}"
 
   vars {
