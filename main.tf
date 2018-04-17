@@ -20,7 +20,7 @@ resource "kubernetes_service" "app-service" {
     session_affinity = "ClientIP"
     port {
       port = 80
-      target_port = 8000
+      target_port = 8080
     }
 
     type = "LoadBalancer"
