@@ -36,5 +36,6 @@ data "template_file" "app-deployment" {
 }
 
 resource "k8s_manifest" "app-deployment" {
+  count = "${var.module_count}"
   content = "${data.template_file.app-deployment.rendered}"
 }
