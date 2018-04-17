@@ -15,7 +15,7 @@ resource "kubernetes_service" "app-service" {
   }
   spec {
     selector {
-      app = "snap"
+      app = "terraform-cd-example-app"
     }
     session_affinity = "ClientIP"
     port {
